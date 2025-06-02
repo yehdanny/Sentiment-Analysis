@@ -1,0 +1,356 @@
+    # 專為短句優化的超參數
+    batch_size = 24 * 5  # 32      # 較大的batch size
+    block_size = 24      # 較短的context window - 關鍵改變！
+    max_iters = 40000    # 4000
+    eval_interval = 200
+    learning_rate = 1e-3  # 稍高的學習率
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    eval_iters = 150
+    n_embd = 64          # 較小的embedding - 避免過度擬合長句
+    n_head = 4           # 較少的head
+    n_layer = 4          # 較少的層數
+    dropout = 0.1        # 增加dropout
+
+----------------------------------------------------------------------------
+
+PS C:\Users\USER\github\gpt_test> & C:/Users/USER/Desktop/程式GPT/.conda/python.exe c:/Users/USER/github/gpt_test/test01v3.py
+Using device: cpu
+Optimized for SHORT sentence generation
+Block size: 24 (shorter context)
+Loading daily_dialog dataset for short sentence training...
+Collected 50198 short sentences
+Created 16733 dialog groups
+Total characters: 1620462
+Vocabulary size: 71
+Encoded data shape: torch.Size([1620462])
+Model parameters: 0.21M
+
+Starting training for short sentences...
+step 0: train loss 4.4756, val loss 4.4761
+Model saved to short_dialog_model.pt
+step 200: train loss 2.1305, val loss 2.1392
+Model saved to short_dialog_model.pt
+step 400: train loss 1.8539, val loss 1.8591
+Model saved to short_dialog_model.pt
+step 600: train loss 1.7038, val loss 1.7205
+Model saved to short_dialog_model.pt
+step 800: train loss 1.6295, val loss 1.6448
+Model saved to short_dialog_model.pt
+step 1000: train loss 1.5685, val loss 1.5855
+Model saved to short_dialog_model.pt
+step 1200: train loss 1.5325, val loss 1.5404
+Model saved to short_dialog_model.pt
+step 1400: train loss 1.5003, val loss 1.5219
+Model saved to short_dialog_model.pt
+step 1600: train loss 1.4718, val loss 1.4944
+Model saved to short_dialog_model.pt
+step 1800: train loss 1.4503, val loss 1.4715
+Model saved to short_dialog_model.pt
+step 2000: train loss 1.4315, val loss 1.4475
+Model saved to short_dialog_model.pt
+step 2200: train loss 1.4247, val loss 1.4448
+Model saved to short_dialog_model.pt
+step 2400: train loss 1.4113, val loss 1.4249
+Model saved to short_dialog_model.pt
+step 2600: train loss 1.3976, val loss 1.4226
+Model saved to short_dialog_model.pt
+step 2800: train loss 1.3867, val loss 1.4012
+Model saved to short_dialog_model.pt
+step 3000: train loss 1.3784, val loss 1.3896
+Model saved to short_dialog_model.pt
+step 3200: train loss 1.3702, val loss 1.3930
+step 3400: train loss 1.3625, val loss 1.3772
+Model saved to short_dialog_model.pt
+step 3600: train loss 1.3573, val loss 1.3754
+Model saved to short_dialog_model.pt
+step 3800: train loss 1.3480, val loss 1.3606
+Model saved to short_dialog_model.pt
+step 4000: train loss 1.3421, val loss 1.3645
+step 4200: train loss 1.3348, val loss 1.3612
+step 4400: train loss 1.3327, val loss 1.3525
+Model saved to short_dialog_model.pt
+step 4600: train loss 1.3359, val loss 1.3494
+Model saved to short_dialog_model.pt
+step 4800: train loss 1.3257, val loss 1.3483
+Model saved to short_dialog_model.pt
+step 5000: train loss 1.3193, val loss 1.3401
+Model saved to short_dialog_model.pt
+step 5200: train loss 1.3183, val loss 1.3396
+Model saved to short_dialog_model.pt
+step 5400: train loss 1.3095, val loss 1.3338
+Model saved to short_dialog_model.pt
+step 5600: train loss 1.3098, val loss 1.3397
+step 5800: train loss 1.3103, val loss 1.3323
+Model saved to short_dialog_model.pt
+step 6000: train loss 1.3010, val loss 1.3267
+Model saved to short_dialog_model.pt
+step 6200: train loss 1.3009, val loss 1.3234
+Model saved to short_dialog_model.pt
+step 6400: train loss 1.3022, val loss 1.3216
+Model saved to short_dialog_model.pt
+step 6600: train loss 1.2991, val loss 1.3250
+step 6800: train loss 1.2854, val loss 1.3115
+Model saved to short_dialog_model.pt
+step 7000: train loss 1.2905, val loss 1.3169
+step 7200: train loss 1.2860, val loss 1.3109
+Model saved to short_dialog_model.pt
+step 7400: train loss 1.2785, val loss 1.3086
+Model saved to short_dialog_model.pt
+step 7600: train loss 1.2851, val loss 1.3031
+Model saved to short_dialog_model.pt
+step 7800: train loss 1.2766, val loss 1.3021
+Model saved to short_dialog_model.pt
+step 8000: train loss 1.2757, val loss 1.3009
+Model saved to short_dialog_model.pt
+step 8200: train loss 1.2776, val loss 1.3040
+step 8400: train loss 1.2734, val loss 1.2995
+Model saved to short_dialog_model.pt
+step 8600: train loss 1.2738, val loss 1.3026
+step 8800: train loss 1.2738, val loss 1.2941
+Model saved to short_dialog_model.pt
+step 9000: train loss 1.2709, val loss 1.2940
+Model saved to short_dialog_model.pt
+step 9200: train loss 1.2647, val loss 1.2925
+Model saved to short_dialog_model.pt
+step 9400: train loss 1.2698, val loss 1.2999
+step 9600: train loss 1.2714, val loss 1.2886
+Model saved to short_dialog_model.pt
+step 9800: train loss 1.2669, val loss 1.2867
+Model saved to short_dialog_model.pt
+step 10000: train loss 1.2552, val loss 1.2886
+step 10200: train loss 1.2631, val loss 1.2880
+step 10400: train loss 1.2566, val loss 1.2879
+step 10600: train loss 1.2545, val loss 1.2828
+Model saved to short_dialog_model.pt
+step 10800: train loss 1.2529, val loss 1.2864
+step 11000: train loss 1.2577, val loss 1.2837
+step 11200: train loss 1.2535, val loss 1.2804
+Model saved to short_dialog_model.pt
+step 11400: train loss 1.2513, val loss 1.2750
+Model saved to short_dialog_model.pt
+step 11600: train loss 1.2492, val loss 1.2777
+step 11800: train loss 1.2525, val loss 1.2786
+step 12000: train loss 1.2471, val loss 1.2760
+step 12200: train loss 1.2490, val loss 1.2753
+step 12400: train loss 1.2429, val loss 1.2740
+Model saved to short_dialog_model.pt
+step 12600: train loss 1.2424, val loss 1.2704
+Model saved to short_dialog_model.pt
+step 12800: train loss 1.2438, val loss 1.2722
+step 13000: train loss 1.2397, val loss 1.2698
+Model saved to short_dialog_model.pt
+step 13200: train loss 1.2412, val loss 1.2699
+step 13400: train loss 1.2422, val loss 1.2705
+step 13600: train loss 1.2375, val loss 1.2665
+Model saved to short_dialog_model.pt
+step 13800: train loss 1.2415, val loss 1.2663
+Model saved to short_dialog_model.pt
+step 14000: train loss 1.2411, val loss 1.2677
+step 14200: train loss 1.2347, val loss 1.2659
+Model saved to short_dialog_model.pt
+step 14400: train loss 1.2368, val loss 1.2596
+Model saved to short_dialog_model.pt
+step 14600: train loss 1.2365, val loss 1.2640
+step 14800: train loss 1.2339, val loss 1.2674
+step 15000: train loss 1.2338, val loss 1.2639
+step 15200: train loss 1.2313, val loss 1.2627
+step 15400: train loss 1.2296, val loss 1.2639
+step 15600: train loss 1.2346, val loss 1.2580
+Model saved to short_dialog_model.pt
+step 15800: train loss 1.2305, val loss 1.2574
+Model saved to short_dialog_model.pt
+step 16000: train loss 1.2257, val loss 1.2571
+Model saved to short_dialog_model.pt
+step 16200: train loss 1.2320, val loss 1.2620
+step 16400: train loss 1.2241, val loss 1.2579
+step 16600: train loss 1.2327, val loss 1.2582
+step 16800: train loss 1.2268, val loss 1.2588
+step 17000: train loss 1.2279, val loss 1.2524
+Model saved to short_dialog_model.pt
+step 17200: train loss 1.2254, val loss 1.2537
+step 17400: train loss 1.2279, val loss 1.2585
+step 17600: train loss 1.2229, val loss 1.2536
+step 17800: train loss 1.2257, val loss 1.2525
+step 18000: train loss 1.2226, val loss 1.2514
+Model saved to short_dialog_model.pt
+step 18200: train loss 1.2234, val loss 1.2495
+Model saved to short_dialog_model.pt
+step 18400: train loss 1.2246, val loss 1.2527
+step 18600: train loss 1.2217, val loss 1.2521
+step 18800: train loss 1.2195, val loss 1.2521
+step 19000: train loss 1.2168, val loss 1.2473
+Model saved to short_dialog_model.pt
+step 19200: train loss 1.2203, val loss 1.2519
+step 19400: train loss 1.2163, val loss 1.2459
+Model saved to short_dialog_model.pt
+step 19600: train loss 1.2122, val loss 1.2456
+Model saved to short_dialog_model.pt
+step 19800: train loss 1.2166, val loss 1.2492
+step 20000: train loss 1.2142, val loss 1.2477
+step 20200: train loss 1.2146, val loss 1.2434
+Model saved to short_dialog_model.pt
+step 20400: train loss 1.2103, val loss 1.2473
+step 20600: train loss 1.2202, val loss 1.2446
+step 20800: train loss 1.2112, val loss 1.2446
+step 21000: train loss 1.2150, val loss 1.2418
+Model saved to short_dialog_model.pt
+step 21200: train loss 1.2150, val loss 1.2421
+step 21400: train loss 1.2133, val loss 1.2417
+Model saved to short_dialog_model.pt
+step 21600: train loss 1.2121, val loss 1.2425
+step 21800: train loss 1.2075, val loss 1.2397
+Model saved to short_dialog_model.pt
+step 22000: train loss 1.2093, val loss 1.2406
+step 22200: train loss 1.2186, val loss 1.2427
+step 22400: train loss 1.2098, val loss 1.2443
+step 22600: train loss 1.2073, val loss 1.2419
+step 22800: train loss 1.2111, val loss 1.2445
+step 23000: train loss 1.2114, val loss 1.2457
+step 23200: train loss 1.2054, val loss 1.2444
+step 23400: train loss 1.2055, val loss 1.2382
+Model saved to short_dialog_model.pt
+step 23600: train loss 1.2054, val loss 1.2386
+step 23800: train loss 1.2077, val loss 1.2434
+step 24000: train loss 1.2105, val loss 1.2391
+step 24200: train loss 1.2009, val loss 1.2391
+step 24400: train loss 1.2025, val loss 1.2384
+step 24600: train loss 1.2043, val loss 1.2353
+Model saved to short_dialog_model.pt
+step 24800: train loss 1.2081, val loss 1.2349
+Model saved to short_dialog_model.pt
+step 25000: train loss 1.2098, val loss 1.2364
+step 25200: train loss 1.2012, val loss 1.2413
+step 25400: train loss 1.2005, val loss 1.2360
+step 25600: train loss 1.2047, val loss 1.2329
+Model saved to short_dialog_model.pt
+step 25800: train loss 1.2050, val loss 1.2369
+step 26000: train loss 1.2007, val loss 1.2361
+step 26200: train loss 1.2006, val loss 1.2381
+step 26400: train loss 1.2034, val loss 1.2297
+Model saved to short_dialog_model.pt
+step 26600: train loss 1.2072, val loss 1.2406
+step 26800: train loss 1.2017, val loss 1.2339
+step 27000: train loss 1.2040, val loss 1.2325
+step 27200: train loss 1.1991, val loss 1.2344
+step 27400: train loss 1.2024, val loss 1.2383
+step 27600: train loss 1.2004, val loss 1.2316
+step 27800: train loss 1.1993, val loss 1.2341
+step 28000: train loss 1.1985, val loss 1.2336
+step 28200: train loss 1.1946, val loss 1.2344
+step 28400: train loss 1.2016, val loss 1.2315
+step 28600: train loss 1.1982, val loss 1.2288
+Model saved to short_dialog_model.pt
+step 28800: train loss 1.2036, val loss 1.2341
+step 29000: train loss 1.1983, val loss 1.2313
+step 29200: train loss 1.1941, val loss 1.2267
+Model saved to short_dialog_model.pt
+step 29400: train loss 1.1981, val loss 1.2330
+step 29600: train loss 1.1977, val loss 1.2292
+step 29800: train loss 1.1981, val loss 1.2317
+step 30000: train loss 1.2013, val loss 1.2354
+step 30200: train loss 1.1944, val loss 1.2261
+Model saved to short_dialog_model.pt
+step 30400: train loss 1.1935, val loss 1.2276
+step 30600: train loss 1.1975, val loss 1.2307
+step 30800: train loss 1.1997, val loss 1.2302
+step 31000: train loss 1.1955, val loss 1.2240
+Model saved to short_dialog_model.pt
+step 31200: train loss 1.1954, val loss 1.2339
+step 31400: train loss 1.1943, val loss 1.2231
+Model saved to short_dialog_model.pt
+step 31600: train loss 1.1913, val loss 1.2288
+step 31800: train loss 1.1941, val loss 1.2309
+step 32000: train loss 1.1908, val loss 1.2332
+step 32200: train loss 1.1987, val loss 1.2264
+step 32400: train loss 1.1934, val loss 1.2295
+step 32600: train loss 1.1908, val loss 1.2274
+step 32800: train loss 1.1970, val loss 1.2232
+step 33000: train loss 1.1926, val loss 1.2242
+step 33200: train loss 1.1886, val loss 1.2235
+step 33400: train loss 1.1924, val loss 1.2258
+step 33600: train loss 1.1908, val loss 1.2277
+step 33800: train loss 1.1863, val loss 1.2215
+Model saved to short_dialog_model.pt
+step 34000: train loss 1.1873, val loss 1.2216
+step 34200: train loss 1.1896, val loss 1.2218
+step 34400: train loss 1.1903, val loss 1.2242
+step 34600: train loss 1.1896, val loss 1.2248
+step 34800: train loss 1.1842, val loss 1.2241
+step 35000: train loss 1.1935, val loss 1.2251
+step 35200: train loss 1.1904, val loss 1.2211
+Model saved to short_dialog_model.pt
+step 35400: train loss 1.1873, val loss 1.2217
+step 35600: train loss 1.1858, val loss 1.2209
+Model saved to short_dialog_model.pt
+step 35800: train loss 1.1912, val loss 1.2291
+step 36000: train loss 1.1912, val loss 1.2231
+step 36200: train loss 1.1885, val loss 1.2240
+step 36400: train loss 1.1905, val loss 1.2145
+Model saved to short_dialog_model.pt
+step 36600: train loss 1.1850, val loss 1.2202
+step 36800: train loss 1.1890, val loss 1.2219
+step 37000: train loss 1.1875, val loss 1.2255
+step 37200: train loss 1.1873, val loss 1.2190
+step 37400: train loss 1.1837, val loss 1.2224
+step 37600: train loss 1.1830, val loss 1.2216
+step 37800: train loss 1.1883, val loss 1.2217
+step 38000: train loss 1.1890, val loss 1.2234
+step 38200: train loss 1.1870, val loss 1.2203
+step 38400: train loss 1.1826, val loss 1.2211
+step 38600: train loss 1.1834, val loss 1.2180
+step 38800: train loss 1.1854, val loss 1.2193
+step 39000: train loss 1.1878, val loss 1.2204
+step 39200: train loss 1.1793, val loss 1.2190
+step 39400: train loss 1.1876, val loss 1.2204
+step 39600: train loss 1.1874, val loss 1.2229
+step 39800: train loss 1.1807, val loss 1.2222
+step 39999: train loss 1.1810, val loss 1.2165
+
+Training completed!
+
+============================================================
+SHORT SENTENCE GENERATION TESTING
+============================================================
+
+1. 標準短句生成 (max_tokens=70):
+--------------------------------------------------
+'Hello' ->  , is my business interesting . Where do you like a lot .
+What are you
+'How are' ->  you training ? Mom , I've never welcome . The way good weekend . No ,
+'Good morning' ->  , too , Mary . I'm a little parcents of really ?
+I don  t want to be
+'What do' ->  you want to go send ? See you are welcome .
+No , it's interesting ?
+S
+'I think' ->  ? Hello , George . No ! Is this a lot for her of the earlier ? Here y
+'Can you' ->  still the ports are clossion .
+Oh , that's up . It's for exercise .
+T
+
+2. 增強標點符號生成:
+--------------------------------------------------
+'Hello' ->  , Jenny .
+So , I don't .
+'How are' ->  you ?
+What seems ?
+We ha
+'Good morning' ->  , Mary .
+I'm so wrong ?
+
+
+3. 超短句生成 (max_tokens=30):
+--------------------------------------------------
+Sample 1: 
+Where will you see a hards .
+O
+Sample 2: 
+I'm sure you are .
+Really ? It
+Sample 3: 
+I guess we said .
+I will have
+Sample 4: 
+Oh . Could you like yourself ?
+Sample 5: 
+I see . It seems are . They  l
+PS C:\Users\USER\github\gpt_test> 
